@@ -16,7 +16,7 @@ function start(port, client) {
         if ('favicon.ico' != reqContext) {
             O.d("Request for: '" + reqContext + "'");
             __CfClient.request(reqContext).then((resp) => {
-                writeResponse(response, 200, JSON.stringify(resp));
+                writeResponse(response, 200, resp);
             }, (e) => {
                 O.e(e);
                 writeResponse(response, 500, 'Check logs, could not get request');
