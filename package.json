@@ -1,0 +1,23 @@
+{
+  "name": "cfclient-server-js",
+  "version": "1.0.0",
+  "description": "Simple server abstraction using the js-cf-client npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ecs-jbariel/cfclient-server-js.git"
+  },
+  "author": "Jarrett Bariel <jbariel@ecsteam.com> (http://www.ecsteam.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ecs-jbariel/cfclient-server-js/issues"
+  },
+  "homepage": "https://github.com/ecs-jbariel/cfclient-server-js#readme",
+  "dependencies": {
+    "js-cfclient": "^1.0.0",
+    "xtend": "^4.0.1"
+  }
+}
