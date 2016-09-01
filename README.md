@@ -1,5 +1,5 @@
 # CF Client API Service
-Create a simple web service to abstract the CF API
+Create a simple web service to abstract the [CF API](https://apidocs.cloudfoundry.org)
 
 ## Getting started
 It's very simple to get this project up and running:
