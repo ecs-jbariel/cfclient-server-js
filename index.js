@@ -7,13 +7,13 @@ if (__IS_DEBUG || __IS_TRACE) {
     O.level(((__IS_TRACE) ? O.LogLevel.TRACE : O.LogLevel.DEBUG));
 }
 
-extend = require("xtend");
+const __serverPort = process.env.PORT || 8888;
 
+extend = require("xtend");
 connectionParams = require('./paramLoader')();
 O.d("connectionParams: " + JSON.stringify(connectionParams));
 
 const CF = require('js-cfclient');
-
 const CfClient = new CF.CFClient(new CF.CFConfig({
     protocol: connectionParams.protocol,
     host: connectionParams.host,
@@ -23,10 +23,5 @@ const CfClient = new CF.CFClient(new CF.CFConfig({
 }));
 
 CfClient.connect().then(() => {
-    CfClient.request('organizations').then((resp) => {
-        O.i('Response: ' + JSON.stringify(resp));
-    }, O.e);
-    CfClient.request('apps').then((resp) => {
-        O.i('Response: ' + JSON.stringify(resp));
-    }, O.e);
+    require('./server').start(__serverPort, CfClient);
 }, O.e);
