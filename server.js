@@ -13,7 +13,11 @@ function start(port, client) {
 
     __server = http.createServer((request, response) => {
         var reqContext = request.url.substr(1);
-        if ('favicon.ico' != reqContext) {
+        if (!reqContext) {
+            writeResponse(response, 200, 'I am alive...');
+        } else if ('favicon.ico' == reqContext) {
+            writeResponse(response, 200, '');
+        } else {
             O.d("Request for: '" + reqContext + "'");
             __CfClient.request(reqContext).then((resp) => {
                 writeResponse(response, 200, resp);
@@ -21,8 +25,6 @@ function start(port, client) {
                 O.e(e);
                 writeResponse(response, 500, 'Check logs, could not get request');
             });
-        } else {
-            writeResponse(response, 200, '');
         }
     }).on('close', () => {
         O.i('Server closed...');
