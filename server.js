@@ -1,9 +1,13 @@
-var http = require('http');
-var path = require('path');
-var url = require('url');
+'use strict';
+
+const http = require('http');
+const path = require('path');
+const url = require('url');
 
 var __server;
 var __CfClient;
+
+const O = require('output-manager');
 
 /**
  * Start the server

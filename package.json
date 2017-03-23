@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ecs-jbariel/cfclient-server-js#readme",
   "dependencies": {
     "js-cfclient": "^1.0.1",
+    "output-manager": "^2.1.0",
     "xtend": "^4.0.1"
   }
 }

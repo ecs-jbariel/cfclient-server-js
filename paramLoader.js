@@ -1,7 +1,11 @@
-var fs = require('fs');
+'use strict';
+
+const O = require('output-manager');
+const extend = require("xtend");
+const fs = require('fs');
 
 module.exports = () => {
-    var _propFile = (process.env.PROPS) ? process.env.PROPS : 'props.json';
+    const _propFile = (process.env.PROPS) ? process.env.PROPS : 'props.json';
     var fileConnParams = {};
 
     O.d("Looking for properties file: '" + _propFile + "'");

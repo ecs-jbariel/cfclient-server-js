@@ -1,4 +1,6 @@
-O = require('./out');
+'use strict';
+
+const O = require('output-manager');
 
 __IS_TRACE = process.env.DO_TRACE || false;
 __IS_DEBUG = process.env.DO_DEBUG || false;
@@ -9,7 +11,6 @@ if (__IS_DEBUG || __IS_TRACE) {
 
 const __serverPort = process.env.PORT || 8888;
 
-extend = require("xtend");
 connectionParams = require('./paramLoader')();
 O.d("connectionParams: " + JSON.stringify(connectionParams));
 
